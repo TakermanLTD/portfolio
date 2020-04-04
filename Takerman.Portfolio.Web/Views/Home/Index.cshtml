@@ -1,0 +1,69 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<section class="home_banner_area" style="background: url(/img/banner/home-banner.png) no-repeat top center;">
+    <div class="banner_inner">
+        <div class="container">
+            <div class="row align-items-center justify-content-between">
+                <div class="col-lg-6">
+                    <div class="banner_content">
+                        <h3>Hello There! We Are</h3>
+                        <h1 class="text-uppercase">TAKERMAN</h1>
+                        <h5 class="text-uppercase">A SOFTWARE DEVELOPMENT COMPANY</h5>
+                        <div class="social_icons my-5">
+                            <a href="https://www.linkedin.com/company/takerman-ltd/" target="_blank" title="LinkedIn"><i class="ti-linkedin"></i></a>
+                            <a href="https://www.github.com/takermanltd" target="_blank" title="GitHub"><i class="ti-github"></i></a>
+                            <a href="https://meetings.hubspot.com/contact683" target="_blank" title="Schedule a meeting" class="text-sm-left"><i class="ti-calendar"></i> schedule</a>
+                        </div>
+                        <div class="fb-like"
+                             data-href="https://takerman.net"
+                             data-show-faces="true"
+                             data-layout="button_count"
+                             data-action="like"
+                             data-size="small"
+                             data-share="true">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="home_right_img">
+                        <img class="img-fluid" src="/img/banner/home-right.png" alt="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        @await Html.PartialAsync("~/Views/Shared/Partials/ProgressBars.cshtml", new ProgressBars())
+    </div>
+</section>
+@await Html.PartialAsync("~/Views/Shared/Partials/Stats.cshtml", new Stats())
+<section class="about_area">
+    <div class="container">
+        <div class="row justify-content-start align-items-center">
+            <div class="col-lg-5">
+                <div class="about_img">
+                    <img class="" src="/img/about-us.png" alt="">
+                </div>
+            </div>
+
+            <div class="offset-lg-1 col-lg-5">
+                <div class="main_title text-left">
+                    <p class="top_text">About us <span></span></p>
+                    <h2>
+                        Software Development
+                    </h2>
+                    <p>
+                        Our strength is that we worked with many tehcnologies for short perod of time so if you need a solution of a problem, we would be able to find the best one.
+                        We are new on the marked and don't have many released projects, so you can negotiate about the price.
+                        Our developers prefer freedom, because when you have freedom, you can work and think better, you can produce better products.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+@await Html.PartialAsync("~/Views/Shared/Partials/Services.cshtml")
+@await Html.PartialAsync("~/Views/Shared/Partials/Portfolio.cshtml", new Portfolio())
+@await Html.PartialAsync("~/Views/Shared/Partials/Blog.cshtml", new Blog(3))
