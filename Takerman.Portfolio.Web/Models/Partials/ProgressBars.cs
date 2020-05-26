@@ -8,11 +8,11 @@ namespace Takerman.Portfolio.Web.Models.Partials
         {
             this.Bars = new Dictionary<string, int>();
 
-                    this.Bars.Add("Front-End", 7);
-                    this.Bars.Add("Back-End", 9);
-                    this.Bars.Add("Databases", 7);
-                    this.Bars.Add("Web", 8);
-                    this.Bars.Add("Desktop", 7);
+            this.Bars.Add("Front-End", 7);
+            this.Bars.Add("Back-End", 9);
+            this.Bars.Add("Databases", 7);
+            this.Bars.Add("Web", 8);
+            this.Bars.Add("Desktop", 7);
         }
 
         public Dictionary<string, int> Bars { get; set; }

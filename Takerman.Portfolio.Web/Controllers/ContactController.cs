@@ -4,8 +4,8 @@ using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Logging;
 using System.Collections.Generic;
 using Takerman.Portfolio.Web.Models;
-using Takerman.Portfolio.Web.Resources;
 using Takerman.Portfolio.Web.Models.Services;
+using Takerman.Portfolio.Web.Resources;
 
 namespace Takerman.Portfolio.Web.Controllers
 {

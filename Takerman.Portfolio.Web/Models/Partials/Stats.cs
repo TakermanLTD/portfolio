@@ -4,9 +4,9 @@
     {
         public Stats()
         {
-                    this.HappyCustomers = 6;
-                    this.SolvedTickets = 100;
-                    this.AverageRating = 9;
+            this.HappyCustomers = 6;
+            this.SolvedTickets = 100;
+            this.AverageRating = 9;
         }
 
         public int SolvedTickets { get; set; }

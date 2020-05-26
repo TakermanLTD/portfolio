@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-
-namespace Takerman.Portfolio.Web.Models
+﻿namespace Takerman.Portfolio.Web.Models
 {
     public class Project
     {

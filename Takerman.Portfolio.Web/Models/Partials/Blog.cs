@@ -10,7 +10,7 @@ namespace Takerman.Portfolio.Web.Models.Partials
         {
             this.BlogItemsMini = new List<BlogItemMini>();
 
-                    this.BlogItemsMini = new List<BlogItemMini>()
+            this.BlogItemsMini = new List<BlogItemMini>()
                     {
                         new BlogItemMini(){
                             Author = "Tanyo Ivanov",
@@ -28,6 +28,7 @@ namespace Takerman.Portfolio.Web.Models.Partials
                 this.BlogItemsMini = this.BlogItemsMini.Take((int)maxPostsCount);
             }
         }
+
         public IEnumerable<BlogItemMini> BlogItemsMini { get; set; }
     }
 }

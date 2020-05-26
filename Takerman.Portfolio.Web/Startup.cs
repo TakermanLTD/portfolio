@@ -7,8 +7,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using System.Globalization;
-using Takerman.Portfolio.Web.Resources;
 using Takerman.Portfolio.Web.Models.Services;
+using Takerman.Portfolio.Web.Resources;
 
 namespace Takerman.Portfolio.Web
 {

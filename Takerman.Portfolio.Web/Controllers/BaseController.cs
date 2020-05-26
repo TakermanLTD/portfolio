@@ -6,11 +6,11 @@ using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Logging;
 using System;
 using System.Linq;
+using System.Reflection;
 using Takerman.Portfolio.Web.Models;
 using Takerman.Portfolio.Web.Models.Filters;
-using Takerman.Portfolio.Web.Resources;
 using Takerman.Portfolio.Web.Models.Services;
-using System.Reflection;
+using Takerman.Portfolio.Web.Resources;
 
 namespace Takerman.Portfolio.Web.Controllers
 {
@@ -38,7 +38,6 @@ namespace Takerman.Portfolio.Web.Controllers
             var assemblyName = new AssemblyName(type.GetTypeInfo().Assembly.FullName);
             _localizer = factory.Create("SharedResource", assemblyName.Name); // factory.Create(type);
             // _localizer2 = factory.Create("SharedResource", assemblyName.Name);
-
 
             Layout = new Layout();
             Layout.Head.Title = "Takerman";

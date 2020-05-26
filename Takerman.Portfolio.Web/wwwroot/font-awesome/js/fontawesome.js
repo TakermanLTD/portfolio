@@ -323,7 +323,6 @@
       asyncQueue[i][0](asyncQueue[i][1]);
     } // reset async asyncQueue
 
-
     asyncQueue = [];
     asyncTimer = false;
   }
@@ -470,7 +469,6 @@
   /**
    * @class
    */
-
 
   function P(resolver) {
     if (typeof resolver !== 'function') {
@@ -1138,7 +1136,6 @@
    * @return {mixed}                 The final result.
    */
 
-
   var reduce = function fastReduceObject(subject, fn, initialValue, thisContext) {
     var keys = Object.keys(subject),
         length = keys.length,
@@ -1202,7 +1199,6 @@
      * for `fas` so we'll easy the upgrade process for our users by automatically defining
      * this as well.
      */
-
 
     if (prefix === 'fas') {
       defineIcons('fa', icons);
@@ -2455,5 +2451,4 @@
   }
 
   bunker(bootstrap);
-
 }());

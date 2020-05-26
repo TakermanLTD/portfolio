@@ -6,6 +6,7 @@
         {
             this.Title = string.Empty;
         }
+
         public string Title { get; set; }
     }
 }
