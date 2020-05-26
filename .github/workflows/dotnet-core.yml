@@ -31,9 +31,9 @@ jobs:
         # FTP user
         user: takerman
         # FTP password
-        password: secret_password
+        password: Hakerman91!
         # Force SSL encryption
-        forceSsl: false
+        forceSsl: true
         # Local directory
         localDir: .
         # Remote directory
