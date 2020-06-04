@@ -15,6 +15,7 @@ using Takerman.Portfolio.Web.Resources;
 namespace Takerman.Portfolio.Web.Controllers
 {
     [CompanyLayoutActionFilter]
+    [ResponseCache(CacheProfileName = "Default")]
     public abstract class BaseController : Controller
     {
         private readonly IStringLocalizer _localizer;

@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Razor;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -35,9 +36,15 @@ namespace Takerman.Portfolio.Web
 
             services.AddLocalization(options => options.ResourcesPath = "Resources");
 
-            services.AddMvc(option => option.EnableEndpointRouting = false)
-                .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
-                .AddDataAnnotationsLocalization(options => { options.DataAnnotationLocalizerProvider = (type, factory) => factory.Create(typeof(SharedResource)); });
+            services.AddMvc(option =>
+            {
+                option.EnableEndpointRouting = false;
+                option.CacheProfiles.Add("Default", new CacheProfile()
+                {
+                    Duration = 30
+                });
+            }).AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix)
+            .AddDataAnnotationsLocalization(options => { options.DataAnnotationLocalizerProvider = (type, factory) => factory.Create(typeof(SharedResource)); });
 
             services.AddTransient<NavLinksService>();
 
@@ -77,7 +84,14 @@ namespace Takerman.Portfolio.Web
 
             app.UseHttpsRedirection();
 
-            app.UseStaticFiles();
+            var cachePeriod = env.IsDevelopment() ? "600" : "604800";
+            app.UseStaticFiles(new StaticFileOptions
+            {
+                OnPrepareResponse = ctx =>
+                {
+                    ctx.Context.Response.Headers.Append("Cache-Control", $"public, max-age={cachePeriod}");
+                }
+            });
 
             app.UseRouting();
 
