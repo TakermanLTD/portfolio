@@ -412,6 +412,7 @@
     <Content Include="Views\Partials\Sections\_Cta.cshtml" />
     <Content Include="Views\Partials\Sections\_Team.cshtml" />
     <Content Include="Views\Partials\Sections\_Contact.cshtml" />
+    <None Include="Properties\PublishProfiles\FTPProfile.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -420,7 +421,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Properties\PublishProfiles\" />
     <Folder Include="Views\MacroPartials\" />
   </ItemGroup>
   <PropertyGroup>
