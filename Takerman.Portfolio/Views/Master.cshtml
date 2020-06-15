@@ -1,0 +1,24 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>@Model.Name</title>
+    @Html.Partial("~/Views/Partials/Common/_Meta.cshtml")
+    @Html.Partial("~/Views/Partials/Common/_Styles.cshtml")
+    @RenderSection("styles", false)
+</head>
+<body>
+    @Html.Partial("~/Views/Partials/Common/_Header.cshtml")
+    @Html.Partial("~/Views/Partials/Common/_Banner.cshtml")
+    <main id="main">
+        @RenderBody()
+    </main>
+    @Html.Partial("~/Views/Partials/Common/_Footer.cshtml")
+    <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+    @Html.Partial("~/Views/Partials/Common/_Scripts.cshtml")
+    @RenderSection("scripts", false)
+</body>
+</html>

@@ -1,0 +1,15 @@
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Home>
+@using ContentModels = Umbraco.Web.PublishedModels;
+@{
+    Layout = "master.cshtml";
+}
+
+@Html.Partial("~/Views/Partials/Sections/_FeaturedServices.cshtml", Model)
+@Html.Partial("~/Views/Partials/Sections/_About.cshtml", Model)
+@Html.Partial("~/Views/Partials/Sections/_Counts.cshtml", Model)
+@*@Html.Partial("~/Views/Partials/Sections/_Services.cshtml", Model)*@
+@*@Html.Partial("~/Views/Partials/Sections/_Portfolio.cshtml", Model)*@
+@*@Html.Partial("~/Views/Partials/Sections/_Testimonials.cshtml", Model)*@
+@Html.Partial("~/Views/Partials/Sections/_Cta.cshtml", Model)
+@Html.Partial("~/Views/Partials/Sections/_Team.cshtml", Model)
+@Html.Partial("~/Views/Partials/Sections/_Contact.cshtml", Model)
