@@ -420,6 +420,7 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Properties\PublishProfiles\" />
     <Folder Include="Views\MacroPartials\" />
   </ItemGroup>
   <PropertyGroup>
