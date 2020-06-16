@@ -1,10 +1,12 @@
-﻿<footer id="footer">
+﻿@inherits Umbraco.Web.Mvc.UmbracoViewPage<ContentModels.Home>
+@using ContentModels = Umbraco.Web.PublishedModels;
+<footer id="footer">
     <div class="footer-top">
         <div class="container">
             <div class="row  justify-content-center">
                 <div class="col-lg-6">
-                    <h3>Takerman</h3>
-                    <p>Just a Software Development Company</p>
+                    <h3>@Model.SiteName</h3>
+                    <p>@Model.SiteMoto</p>
                 </div>
             </div>
             <div class="row footer-newsletter justify-content-center">
@@ -15,15 +17,15 @@
                 </div>
             </div>
             <div class="social-links">
-                <a href="https://github.com/TakermanLTD" class="github"><i class="bx bxl-github"></i></a>
-                <a href="https://linkedin.com/company/takerman-ltd" class="linkedin"><i class="bx bxl-linkedin"></i></a>
-                <a href="skype:live:contact_44094" class="google-plus"><i class="bx bxl-skype"></i></a>
+                <a href="@Model.GitHub" class="github"><i class="bx bxl-github"></i></a>
+                <a href="@Model.LinkedIn" class="linkedin"><i class="bx bxl-linkedin"></i></a>
+                <a href="skype:@Model.Skype" class="google-plus"><i class="bx bxl-skype"></i></a>
             </div>
         </div>
     </div>
     <div class="container footer-bottom clearfix">
         <div class="copyright">
-            &copy; Copyright <strong><a href="/">Takerman</a></strong>. All Rights Reserved
+            &copy; Copyright <strong><a href="/">@Model.SiteName</a></strong>. All Rights Reserved
         </div>
         <div class="credits">
             Developed by <a href="https://tanyoivanov.net">Tanyo Ivanov</a>

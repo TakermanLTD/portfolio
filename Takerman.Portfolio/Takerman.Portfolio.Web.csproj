@@ -413,6 +413,10 @@
     <Content Include="Views\Partials\Sections\_Team.cshtml" />
     <Content Include="Views\Partials\Sections\_Contact.cshtml" />
     <None Include="Properties\PublishProfiles\FTPProfile.pubxml" />
+    <Content Include="Views\MacroPartials\Counters.cshtml" />
+    <Content Include="Views\MacroPartials\Skills.cshtml" />
+    <Content Include="Views\MacroPartials\SocialNetworks.cshtml" />
+    <Content Include="Views\MacroPartials\Team.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -420,9 +424,7 @@
       <DependentUpon>Web.config</DependentUpon>
     </None>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Views\MacroPartials\" />
-  </ItemGroup>
+  <ItemGroup />
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
