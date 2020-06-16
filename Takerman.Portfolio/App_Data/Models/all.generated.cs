@@ -6,8 +6,8 @@ using  Umbraco.Core.Models;
 using  Umbraco.Core.Models.PublishedContent;
 using  Umbraco.Web;
 using  Umbraco.ModelsBuilder.Embedded;
-[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "65b4374873b89300")]
-[assembly:System.Reflection.AssemblyVersion("0.0.0.4")]
+[assembly:ModelsBuilderAssembly(PureLive = true, SourceHash = "b912bc02d2bb7978")]
+[assembly:System.Reflection.AssemblyVersion("0.0.0.1")]
 
 
 // FILE: models.generated.cs
@@ -62,11 +62,32 @@ namespace Umbraco.Web.PublishedModels
 		// properties
 
 		///<summary>
+		/// Call Action Button
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.2")]
+		[ImplementPropertyType("callActionButton")]
+		public string CallActionButton => this.Value<string>("callActionButton");
+
+		///<summary>
+		/// Call Action Label
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.2")]
+		[ImplementPropertyType("callActionLabel")]
+		public string CallActionLabel => this.Value<string>("callActionLabel");
+
+		///<summary>
 		/// Clients
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.2")]
 		[ImplementPropertyType("clients")]
 		public int Clients => this.Value<int>("clients");
+
+		///<summary>
+		/// Clients Label
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.2")]
+		[ImplementPropertyType("clientsLabel")]
+		public string ClientsLabel => this.Value<string>("clientsLabel");
 
 		///<summary>
 		/// Contact
@@ -81,6 +102,13 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.2")]
 		[ImplementPropertyType("email")]
 		public string Email => this.Value<string>("email");
+
+		///<summary>
+		/// EmailLabel
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.2")]
+		[ImplementPropertyType("emailLabel")]
+		public string EmailLabel => this.Value<string>("emailLabel");
 
 		///<summary>
 		/// GetStarted
@@ -109,6 +137,13 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.2")]
 		[ImplementPropertyType("location")]
 		public string Location => this.Value<string>("location");
+
+		///<summary>
+		/// LocationLabel
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.2")]
+		[ImplementPropertyType("locationLabel")]
+		public string LocationLabel => this.Value<string>("locationLabel");
 
 		///<summary>
 		/// NavAbout
@@ -146,11 +181,88 @@ namespace Umbraco.Web.PublishedModels
 		public string Phone => this.Value<string>("phone");
 
 		///<summary>
+		/// PhoneLabel
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.2")]
+		[ImplementPropertyType("phoneLabel")]
+		public string PhoneLabel => this.Value<string>("phoneLabel");
+
+		///<summary>
 		/// Projects
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.2")]
 		[ImplementPropertyType("projects")]
 		public int Projects => this.Value<int>("projects");
+
+		///<summary>
+		/// Projects Label
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.2")]
+		[ImplementPropertyType("projectsLabel")]
+		public string ProjectsLabel => this.Value<string>("projectsLabel");
+
+		///<summary>
+		/// Service1
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.2")]
+		[ImplementPropertyType("service1")]
+		public string Service1 => this.Value<string>("service1");
+
+		///<summary>
+		/// Service1 Icon
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.2")]
+		[ImplementPropertyType("service1Icon")]
+		public string Service1Icon => this.Value<string>("service1Icon");
+
+		///<summary>
+		/// Service1 Value
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.2")]
+		[ImplementPropertyType("service1Value")]
+		public string Service1Value => this.Value<string>("service1Value");
+
+		///<summary>
+		/// Service2
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.2")]
+		[ImplementPropertyType("service2")]
+		public string Service2 => this.Value<string>("service2");
+
+		///<summary>
+		/// Service2 Icon
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.2")]
+		[ImplementPropertyType("service2Icon")]
+		public string Service2Icon => this.Value<string>("service2Icon");
+
+		///<summary>
+		/// Service2Value
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.2")]
+		[ImplementPropertyType("service2Value")]
+		public string Service2Value => this.Value<string>("service2Value");
+
+		///<summary>
+		/// Service3
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.2")]
+		[ImplementPropertyType("service3")]
+		public string Service3 => this.Value<string>("service3");
+
+		///<summary>
+		/// Service3 Icon
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.2")]
+		[ImplementPropertyType("service3Icon")]
+		public string Service3Icon => this.Value<string>("service3Icon");
+
+		///<summary>
+		/// Service3Value
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.2")]
+		[ImplementPropertyType("service3Value")]
+		public string Service3Value => this.Value<string>("service3Value");
 
 		///<summary>
 		/// SiteMoto
@@ -165,6 +277,13 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.2")]
 		[ImplementPropertyType("siteName")]
 		public string SiteName => this.Value<string>("siteName");
+
+		///<summary>
+		/// Skills Description
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.2")]
+		[ImplementPropertyType("skillsDescription")]
+		public string SkillsDescription => this.Value<string>("skillsDescription");
 
 		///<summary>
 		/// Skype
@@ -188,6 +307,41 @@ namespace Umbraco.Web.PublishedModels
 		public int Support => this.Value<int>("support");
 
 		///<summary>
+		/// Support Label
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.2")]
+		[ImplementPropertyType("supportLabel")]
+		public string SupportLabel => this.Value<string>("supportLabel");
+
+		///<summary>
+		/// Team
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.2")]
+		[ImplementPropertyType("team")]
+		public string Team => this.Value<string>("team");
+
+		///<summary>
+		/// Team1
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.2")]
+		[ImplementPropertyType("team1")]
+		public string Team1 => this.Value<string>("team1");
+
+		///<summary>
+		/// Team1Description
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.2")]
+		[ImplementPropertyType("team1Description")]
+		public string Team1Description => this.Value<string>("team1Description");
+
+		///<summary>
+		/// Team1Position
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.2")]
+		[ImplementPropertyType("team1Position")]
+		public string Team1Position => this.Value<string>("team1Position");
+
+		///<summary>
 		/// Title
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.2")]
@@ -200,6 +354,13 @@ namespace Umbraco.Web.PublishedModels
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.2")]
 		[ImplementPropertyType("workers")]
 		public int Workers => this.Value<int>("workers");
+
+		///<summary>
+		/// Workers Label
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder", "8.6.2")]
+		[ImplementPropertyType("workersLabel")]
+		public string WorkersLabel => this.Value<string>("workersLabel");
 	}
 
 	/// <summary>Folder</summary>

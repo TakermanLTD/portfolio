@@ -12,6 +12,9 @@
                 @*<li><a href="#portfolio">Portfolio</a></li>*@
                 <li><a href="#team">@Model.NavTeam</a></li>
                 <li><a href="#contact">@Model.NavContact</a></li>
+                <li>
+                    @Html.Partial("~/Views/Partials/Common/_Languages.cshtml")
+                </li>
             </ul>
         </nav>
         <a href="#about" class="get-started-btn scrollto">@Model.GetStarted</a>

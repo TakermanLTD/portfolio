@@ -4,20 +4,19 @@
 <section id="team" class="team section-bg">
     <div class="container">
         <div class="section-title">
-            <span>Team</span>
-            <h2>Team</h2>
-            <p>That's our team</p>
+            <span>@Model.Team</span>
+            <h2>@Model.Team</h2>
         </div>
         <div class="row">
             <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
                 <div class="member">
                     <a target="_blank" href="https://tanyoivanov.net">
-                        <img src="assets/img/team/team-1.jpg" alt="">
+                        <img src="/assets/img/team/team-1.jpg" alt="">
                     </a>
-                    <h4>Tanyo Ivanov</h4>
-                    <span>Software Developer</span>
+                    <h4>@Model.Team1</h4>
+                    <span>@Model.Team1Position</span>
                     <p>
-                        A .NET Developer with some years of experience and really interesting website.
+                        @Model.Team1Description
                     </p>
                     <div class="social">
                         <a target="_blank" href="https://tanyoivanov.net"><i class="icofont-globe"></i></a>
