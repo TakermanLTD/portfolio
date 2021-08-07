@@ -8,4 +8,5 @@ wp-content/*
  
 wp-content/themes/*
 !wp-content/themes/niva/
+!wp-content/themes/niva-child/
 !wp-content/themes/twentytwentyone
