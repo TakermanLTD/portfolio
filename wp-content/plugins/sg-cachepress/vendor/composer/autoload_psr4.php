@@ -7,6 +7,10 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'SiteGround_Optimizer\\' => array($baseDir . '/core'),
+    'SiteGround_Helper\\' => array($vendorDir . '/siteground/siteground-helper/src'),
+    'SiteGround_Data\\' => array($vendorDir . '/siteground/siteground-data/src'),
+    'MatthiasMullie\\PathConverter\\' => array($vendorDir . '/matthiasmullie/path-converter/src'),
+    'MatthiasMullie\\Minify\\' => array($vendorDir . '/matthiasmullie/minify/src'),
     'CharlesRumley\\Tests\\' => array($vendorDir . '/charles-rumley/php-po-to-json/tests'),
     'CharlesRumley\\' => array($vendorDir . '/charles-rumley/php-po-to-json/src'),
 );

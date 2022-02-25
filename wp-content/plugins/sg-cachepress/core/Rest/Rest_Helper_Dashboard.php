@@ -2,7 +2,7 @@
 namespace SiteGround_Optimizer\Rest;
 
 use SiteGround_Optimizer;
-use SiteGround_Optimizer\Helper\Helper;
+use SiteGround_Helper\Helper_Service;
 
 /**
  * Rest Helper class that manages the plugin dashboard.
@@ -18,7 +18,7 @@ class Rest_Helper_Dashboard extends Rest_Helper {
 		$response = array();
 
 		// Add notification if we have updates available.
-		if ( Helper::has_updates() ) {
+		if ( Helper_Service::has_updates() ) {
 			$response = array(
 				array(
 					'title'       => __( 'YOUR WORDPRESS NEEDS ATTENTION', 'sg-cachepress' ),
@@ -75,8 +75,8 @@ class Rest_Helper_Dashboard extends Rest_Helper {
 				'icon'        => 'product-caching',
 				'icon_color'  => 'salmon',
 				'status'      => 'warning',
-				'text'        => __( 'Dynamic Caching is essential for speeding up your website and is the single most effective optimization that every website must have.', 'sg-cachepress' ),
-				'button_text' => __( ' Go to Dynamic Caching', 'sg-cachepress' ),
+				'text'        => __( 'Caching is essential for speeding up your website and is the single most effective optimization that every website must have.', 'sg-cachepress' ),
+				'button_text' => __( ' Go to Caching', 'sg-cachepress' ),
 				'button_link' => 'admin.php?page=sgo_caching',
 				'title'       => __( 'Caching', 'sg-cachepress' ),
 				'is_enabled'  => intval( get_option( 'siteground_optimizer_enable_cache', 0 ) ),
@@ -86,6 +86,7 @@ class Rest_Helper_Dashboard extends Rest_Helper {
 		if ( 0 === $boxes['caching']['is_enabled'] ) {
 			$boxes['caching']['text'] = __( 'Review your caching settings and enable the recommended options to get the best of your website caching.', 'sg-cachepress' );
 		}
+
 		$data = array();
 
 		// Loop the optimization necesary boxes.
@@ -179,21 +180,21 @@ class Rest_Helper_Dashboard extends Rest_Helper {
 
 		$title = __( 'Free Ebook', 'sg-cachepress' );
 
-		if ( file_exists( '/Z' ) ) {
-			$title = __( 'Get Secure WordPress Hosting', 'sg-cachepress' );
+		if ( ! Helper_Service::is_siteground() ) {
+			$title = __( 'Superfast WordPress Hosting', 'sg-cachepress' );
 
 			$data = array(
 				'it_IT' => array(
 					'image' => SiteGround_Optimizer\URL . '/assets/images/banner-it.png',
-					'link'  => 'https://it.siteground.com/hosting-wordpress?mktafcode=8df9fe65af8e6fd3d868748fb344b2ed',
+					'link'  => 'https://it.siteground.com/hosting-wordpress?mktafcode=4eca28eb782df329f9d78ed6d236193f&utm_source=sgoptimizerplugin',
 				),
 				'es_ES' => array(
 					'image' => SiteGround_Optimizer\URL . '/assets/images/banner-es.png',
-					'link'  => 'https://www.siteground.es/wordpress-hosting.htm?mktafcode=8df9fe65af8e6fd3d868748fb344b2ed',
+					'link'  => 'https://www.siteground.es/hosting-wordpress.htm?mktafcode=4eca28eb782df329f9d78ed6d236193f&utm_source=sgoptimizerplugin',
 				),
 				'default' => array(
 					'image' => SiteGround_Optimizer\URL . '/assets/images/banner.png',
-					'link'  => 'https://www.siteground.com/wordpress-hosting.htm?mktafcode=8df9fe65af8e6fd3d868748fb344b2ed',
+					'link'  => 'https://www.siteground.com/wordpress-hosting.htm?mktafcode=4eca28eb782df329f9d78ed6d236193f&utm_source=sgoptimizerplugin',
 				),
 			);
 		}

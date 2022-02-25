@@ -1,8 +1,8 @@
 <?php
 namespace SiteGround_Optimizer\I18n;
 
-use SiteGround_Optimizer\Helper\Helper;
 use CharlesRumley\PoToJson;
+use SiteGround_Helper\Helper_Service;
 
 /**
  * I18n functions.
@@ -53,7 +53,7 @@ class I18n {
 		}
 
 		// Setup the WP Filesystem.
-		$wp_filesystem = Helper::setup_wp_filesystem();
+		$wp_filesystem = Helper_Service::setup_wp_filesystem();
 
 		// Init the convertor class.
 		$po_to_json = new PoToJson();
