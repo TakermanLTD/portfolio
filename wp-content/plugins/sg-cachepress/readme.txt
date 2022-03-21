@@ -36,6 +36,11 @@ File-Based Caching:
 	With file-based caching enabled we will create static HTML versions of your website which will be served to future visitors. The files are stored in the browser memory.
 	Included in version 7.0.0, the File-Based Caching is available both for SiteGround and non SiteGround users.
 
+	File-Based Caching configuration:
+		- Clean up interval - this allows you to manage the interval File-Based cache will be automatically purged on.
+		- Preheat cache - When Preheating is enabled, our system will reload the cache once it is purged after content update in order to serve the fastest possible results to your real visitors. Preheating is using the website sitemap and being executed via cron.
+		- Logged-in users cache - By default, we do not cache content for logged in users. Once Logged In Cache is enabled, we will store separate caches for each user. Note, that if you have many users, the size of the stored cache may be increased.
+
 Memcached:
 	Powerful object caching for your site. Memcached stores frequently executed queries to your databases and then reuses them for better performance. It is available only on SiteGround Environment.
 
@@ -56,6 +61,18 @@ Here's an example of the code, you can add to your functions.php file:
 		$default_capabilities[] = 'edit_published_posts'; // For Authors.
 
 		return $default_capabilities;
+	}
+
+Another filter is created in order to manage the number of URLs your website will be preheating. The default value is 200.
+
+Here's an example of the code, you can add to your functions.php file:
+
+	add_filter( 'sg_file_caching_preheat_url_limit', 'sgo_preheat_limit' );
+	function sgo_preheat_limit( $xml_urls ) {
+		// Define custom limit for XML URL preheat.
+		$xml_urls = 300;
+
+		return $xml_urls;
 	}
 
 = SiteGround Optimizer Environment Page =
@@ -310,6 +327,24 @@ Our plugin uses a cookie in order to function properly. It does not store person
 1. Go to Plugins -> Installed Plugins and click the 'Activate' link under the WordPress SiteGround Optimizer listing
 
 == Changelog ==
+
+= Version 7.0.6 =
+Release Date: March 4th, 2022
+
+* Improved installation for users not hosted on SiteGround.
+
+= Version 7.0.5 =
+Release Date: March 2nd, 2022
+
+* Improved Cache Preheat
+* Improved Auto Purge functionality (File-Based cache, comments, custom post types)
+* Improved new images WebP generation
+* Improved Multisite support
+
+= Version 7.0.4 =
+Release Date: February 28th, 2022
+
+* Improved uninstall checks
 
 = Version 7.0.3 =
 Release Date: February 14th, 2022

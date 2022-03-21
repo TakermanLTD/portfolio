@@ -392,6 +392,26 @@
                 }
             },
             "install-path": "../siteground/siteground-helper"
+        },
+        {
+            "name": "siteground/siteground-i18n",
+            "version": "dev-master",
+            "version_normalized": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://gitlab.siteground.com/wordpress/siteground-i18n.git",
+                "reference": "b242d643714a172f4d000e3b6a05a6069c8dd30b"
+            },
+            "time": "2022-01-31T13:14:49+00:00",
+            "default-branch": true,
+            "type": "library",
+            "installation-source": "source",
+            "autoload": {
+                "psr-4": {
+                    "SiteGround_i18n\\": "src/"
+                }
+            },
+            "install-path": "../siteground/siteground-i18n"
         }
     ],
     "dev": true,

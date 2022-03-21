@@ -12,6 +12,18 @@ class Supercacher_Posts {
 	use Update_Queue_Trait;
 
 	/**
+	 * List of post types excluded from smart cache purge.
+	 *
+	 * @since 7.0.5
+	 *
+	 * @var array.
+	 */
+	public $excluded_post_types = array(
+		// eventprime-guest-bookings
+		'em_booking',
+	);
+
+	/**
 	 * List of post statuses excluded from smart cache purge.
 	 *
 	 * @since 7.0.0
@@ -188,8 +200,9 @@ class Supercacher_Posts {
 			return true;
 		}
 
-		// True if post status is excluded or post type is not public.
+		// True if post type/status is excluded or post type is not public.
 		if (
+			in_array( $post_type->name, $this->excluded_post_types ) || // Post type is excluded
 			in_array( $post->post_status, $this->excluded_post_status ) || // Post status is excluded
 			false === $post_type->public // Post type is not public
 		) {

@@ -7,7 +7,7 @@ use SiteGround_Optimizer\Helper\Helper;
 use SiteGround_Optimizer\Multisite\Multisite;
 use SiteGround_Optimizer\Modules\Modules;
 use SiteGround_Optimizer\Options\Options;
-use SiteGround_Optimizer\I18n\I18n;
+use SiteGround_i18n\i18n_Service;
 use SiteGround_Helper\Helper_Service;
 
 /**
@@ -311,12 +311,14 @@ class Admin {
 			$navigation[ $subpage ] = admin_url( 'admin.php?page=' . $subpage );
 		}
 
+		$i18n_service = new i18n_Service( 'sg-cachepress' );
+
 		$data = array(
 			'rest_base'           => untrailingslashit( get_rest_url( null, '/' ) ),
 			'home_url'            => Helper_Service::get_home_url(),
 			'is_cron_disabled'    => Helper_Service::is_cron_disabled(),
 			'is_siteground'       => Helper_Service::is_siteground(),
-			'locale'              => I18n::get_i18n_data_json(),
+			'locale'              => $i18n_service->get_i18n_data_json(),
 			'update_timestamp'    => get_option( 'siteground_optimizer_update_timestamp', 0 ),
 			'is_shop'             => is_plugin_active( 'woocommerce/woocommerce.php' ) ? 1 : 0,
 			'localeSlug'          => join( '-', explode( '_', \get_user_locale() ) ),
@@ -365,7 +367,14 @@ class Admin {
 	public function reorder_submenu_pages( $menu_order ) {
 		// Load the global submenu.
 		global $submenu;
+
 		if ( empty( $submenu['sg-cachepress'] ) ) {
+			return;
+		}
+
+		// Hide the dashboard page on Multisite applications.
+		if ( is_multisite() ) {
+			unset( $submenu['sg-cachepress'][0] );
 			return;
 		}
 

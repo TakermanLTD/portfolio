@@ -1,0 +1,31 @@
+
+---Downloaded files---
+The import files for: Fast Elementor were successfully downloaded!
+Initial max execution time = 120
+Files info:
+Site URL = https://takerman.net
+Data file = /home/customer/www/takerman.net/public_html/wp-content/uploads/2022/03/demo-content-import-file_2022-03-21__22-05-47.xml
+Widget file = /home/customer/www/takerman.net/public_html/wp-content/uploads/2022/03/demo-widgets-import-file_2022-03-21__22-05-47.json
+Customizer file = not defined!
+Redux files:
+pix_options -> /home/customer/www/takerman.net/public_html/wp-content/themes/essentials/inc/demo-content/sites/fast/fast-elementor-options.json 
+
+
+------
+New AJAX call!
+
+
+---Importing widgets---
+Main Sidebar : 
+
+PixFort Search - Search - Imported
+PixFort Promo Box - Call to action - Imported
+Tag Cloud - No Title - Imported
+PixFort Recent Posts - Recent Posts - Imported
+PixFort Categories - Categories - Imported
+PixFort Social Links - Social Links - Imported
+
+
+
+---Importing Redux settings---
+Redux settings import for: pix_options finished successfully!

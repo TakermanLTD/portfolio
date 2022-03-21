@@ -14,7 +14,8 @@ function sg_cachepress_purge_cache( $url = false ) {
 	// Bail if Dynamic cache is disabled.
 	if (
 		! Options::is_enabled( 'siteground_optimizer_enable_cache' ) &&
-		! Options::is_enabled( 'siteground_optimizer_file_caching' ) ) {
+		! Options::is_enabled( 'siteground_optimizer_file_caching' )
+	) {
 		return;
 	}
 

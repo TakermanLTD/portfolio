@@ -105,6 +105,7 @@ class File_Cacher extends Supercacher {
 		'edd_items_in_cart',
 		'wordpress_logged_in_',
 		'wpSGCacheBypass',
+		'comment_author_',
 	);
 
 	/**
@@ -496,7 +497,10 @@ class File_Cacher extends Supercacher {
 				continue;
 			}
 
-			$self->hit_url_cache( $url );
+			// Preheat the cache if the option is enabled.
+			if ( Options::is_enabled( 'siteground_optimizer_preheat_cache' ) ) {
+				$self->hit_url_cache( $url );
+			}
 		}
 
 		return true;
@@ -557,6 +561,11 @@ class File_Cacher extends Supercacher {
 	public function clean_cache_dir() {
 		// Delete the main directory for the file caching.
 		$this->wp_filesystem->delete( $this->get_cache_dir(), true );
+
+		// Bail if WP Cron is disabled.
+		if ( Helper_Service::is_cron_disabled() ) {
+			return;
+		}
 
 		$this->schedule_cleanup();
 
@@ -619,6 +628,12 @@ class File_Cacher extends Supercacher {
 
 		$regex = $this->get_excluded_urls_regex();
 
+		// Limit the number of sitemap URLs we are preheating.
+		$sitemap_url_limit = apply_filters( 'sg_file_caching_preheat_url_limit', 200 );
+
+		// Sitemap URL counter.
+		$counter = 0;
+
 		// Iterate the sitemap.
 		foreach ( $xml->sitemap as $entry ) {
 			// Load the inner xml.
@@ -636,11 +651,21 @@ class File_Cacher extends Supercacher {
 					continue;
 				}
 
+				// Increase the counter.
+				$counter++;
+
+				// Check if we have hit the URL limit.
+				if ( $sitemap_url_limit < $counter ) {
+					// Dispatch and return.
+					return $this->preheat->save()->dispatch();
+				}
+
+				// Push to queue.
 				$this->preheat->push_to_queue( (string) $url->loc );
 			}
 		}
 
-
+		// Dispatch the process.
 		$this->preheat->save()->dispatch();
 	}
 

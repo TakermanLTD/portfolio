@@ -8,6 +8,7 @@ use SiteGround_Optimizer\Helper\Helper;
 use SiteGround_Optimizer\Helper\Factory_Trait;
 use SiteGround_Optimizer\Install_Service\Install_6_0_0;
 use SiteGround_Helper\Helper_Service;
+use SiteGround_i18n\i18n_Service;
 use SiteGround_Data\Settings_Page;
 use SiteGround_Data\Settings;
 
@@ -453,10 +454,7 @@ class Loader {
 		add_action( 'siteground_optimizer_start_image_optimization_cron', array( $this->images_optimizer, 'start_optimization' ) );
 
 		// Optimize newly uploaded images.
-		if (
-			'0' !== get_option( 'siteground_optimizer_compression_level', '0' ) &&
-			0 === Helper_Service::is_cron_disabled()
-		) {
+		if ( '0' !== get_option( 'siteground_optimizer_compression_level', '0' ) ) {
 			add_action( 'delete_attachment', array( $this->images_optimizer, 'delete_backups' ) );
 			add_action( 'wp_generate_attachment_metadata', array( $this->images_optimizer, 'optimize_new_image' ), 10, 2 );
 		} else {
@@ -478,10 +476,7 @@ class Loader {
 		add_action( 'siteground_optimizer_start_webp_conversion_cron', array( $this->images_optimizer_webp, 'start_optimization' ) );
 
 		// Optimize newly uploaded images.
-		if (
-			Options::is_enabled( 'siteground_optimizer_webp_support' ) &&
-			0 === Helper_Service::is_cron_disabled()
-		) {
+		if ( Options::is_enabled( 'siteground_optimizer_webp_support' ) ) {
 			add_action( 'delete_attachment', array( $this->images_optimizer_webp, 'delete_webp_copy' ) );
 			add_action( 'edit_attachment', array( $this->images_optimizer_webp, 'regenerate_webp_copy' ) );
 			add_action( 'wp_generate_attachment_metadata', array( $this->images_optimizer_webp, 'optimize_new_image' ), 10, 2 );

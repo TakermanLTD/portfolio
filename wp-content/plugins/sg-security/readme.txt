@@ -1,5 +1,5 @@
 === SiteGround Security ===
-Contributors: Hristo Sg, siteground, sstoqnov, stoyangeorgiev, elenachavdarova
+Contributors: Hristo Sg, siteground, sstoqnov, stoyangeorgiev, elenachavdarova, ignatggeorgiev
 Tags: security, firewall, malware scanner, web application firewall, two factor authentication, block hackers, country blocking, clean hacked site, blocklist, waf, login security
 Requires at least: 4.7
 Tested up to: 5.9
@@ -45,6 +45,17 @@ function remove_login_access_data() {
 
 = Two-factor Authentication =
 Two-factor Authentication for Admin User will force all admins to provide a token, generated from the Google Authentication application when logging in. 
+
+**Important!**
+You can force other roles to use the Two-Factor authentication as well. Once enabled, you can add your filter as the following.
+
+`
+add_filter( 'sg_security_2fa_roles', 'add_user_roles_to_2fa' );
+function add_user_roles_to_2fa( $roles ) {
+    $roles[] = 'your_role';
+    return $roles;
+}
+`
 
 = Disable Common Usernames =
 Using common usernames like 'admin' is a security threat that often results in unauthorised access. By enabling this option we will disable the creation of common usernames and if you already have one ore more users with a weak username, we'll ask you to provide new one(s).
@@ -137,6 +148,7 @@ In version 1.0.2 we've added full WP-CLI support for all plugin options and func
 * `wp sg log ip add|remove|list <name> --ip=<ip>` - add/list/remove user defined pingbots listed in the activity log by ip
 * `wp sg log ua add|remove|list <name> ` - add/list/remove user defined bots listed in the activity log by user agent
 * `wp sg list log-unknown|log-registered|log-blocked --days=<days>` - List specific access log for a specific period
+* `wp sg 2fa reset id ID` - Resets the 2fa setup for the user ID.
 
 = Requirements =
 * WordPress 4.7
@@ -161,6 +173,44 @@ In version 1.0.2 we've added full WP-CLI support for all plugin options and func
 1. Go to Plugins -> Installed Plugins and click the 'Activate' link under the WordPress SiteGround Security listing
 
 == Changelog ==
+
+= Version 1.2.4 =
+Release Date: March 16th, 2022
+
+* Improved Weekly Emails
+* Improved Woocommerce Payments plugin support
+* 2FA Authentication Security Strengthening
+
+= Version 1.2.3 =
+Release Date: March 11th, 2022
+
+* 2FA Authentication Security Strengthening
+
+= Version 1.2.2 =
+Release Date: March 11th, 2022
+
+* 2FA Authentication Security Strengthening
+
+= Version 1.2.1 =
+Release Date: March 9th, 2022
+
+* Improved Weekly reports
+* Improved HTTP Headers service
+* Code Refactoring
+
+= Version 1.2.0 =
+Release Date: February 28th, 2022
+
+* NEW – Weekly Reports
+* Code Refactoring and General Improvements
+* Improved 2FA user role support
+* Improved error handling
+* Improved Limit Login IP Range support
+* Improved Event log
+* Improved Phlox theme support
+* Minor fixes
+* Improved WP-CLI support
+* Environment data collection consent added
 
 = Version 1.1.3 =
 Release Date: October 1st, 2021

@@ -1,6 +1,7 @@
 <?php
 namespace SG_Security\Sg_2fa;
 
+use SG_Security\Helper\Helper;
 use PHPGangsta_GoogleAuthenticator;
 use SG_Security;
 
@@ -54,6 +55,17 @@ class Sg_2fa {
 	}
 
 	/**
+	 * Get the roles that apply for 2FA.
+	 *
+	 * @since 1.2.0
+	 *
+	 * @return array The roles, that have 2FA enabled.
+	 */
+	public function get_2fa_user_roles() {
+		return apply_filters( 'sg_security_2fa_roles', $this->roles );
+	}
+
+	/**
 	 * Generate QR code for specific user.
 	 *
 	 * @param  object $user The WP_USER object.
@@ -99,7 +111,7 @@ class Sg_2fa {
 	public function enable_2fa() {
 		$users = get_users(
 			array(
-				'role__in' => $this->roles,
+				'role__in' => $this->get_2fa_user_roles(),
 			)
 		);
 
@@ -111,7 +123,7 @@ class Sg_2fa {
 			// Get the user by the user id.
 			$user = get_userdata( $user->data->ID );
 
-			if ( empty( array_intersect( $this->roles, $user->roles ) ) ) {
+			if ( empty( array_intersect( $this->get_2fa_user_roles(), $user->roles ) ) ) {
 				continue;
 			}
 
@@ -579,12 +591,15 @@ class Sg_2fa {
 	 */
 	public function init_2fa( $user_login, $user ) {
 		// Bail if the user role does not allow 2FA setup.
-		if ( empty( array_intersect( $this->roles, $user->roles ) ) ) {
+		if ( empty( array_intersect( $this->get_2fa_user_roles(), $user->roles ) ) ) {
 			return;
 		}
 
+		// Get the user secret.
+		$user_secret = get_user_meta( $user->ID, 'sg_security_2fa_secret', true );
+
 		// Bail if the user doesn't have secret.
-		if ( empty( get_user_meta( $user->ID, 'sg_security_2fa_secret', true ) ) ) { // phpcs:ignore
+		if ( empty( $user_secret ) ) {
 			return;
 		}
 
@@ -595,6 +610,19 @@ class Sg_2fa {
 
 		// Remove the auth cookie.
 		wp_clear_auth_cookie();
+
+		// Unique key.
+		$key = md5( uniqid() );
+
+		// Update the user meta with unique encryption key for the login.
+		update_user_meta( $user->ID, 'sgs_encryption_key', $key );
+
+		// Update the user meta with the 2fa login key encrypted.
+		update_user_meta(
+			$user->ID,
+			'sgs_2fa_login_key',
+			Helper::sgs_encrypt( $user_secret, $key )
+		);
 
 		if ( 1 == get_user_meta( $user->ID, 'sg_security_2fa_configured', true ) ) { // phpcs:ignore
 			// Load the 2fa form.
@@ -627,6 +655,21 @@ class Sg_2fa {
 	 * @since  1.1.0
 	 */
 	public function validate_2fabc_login() {
+		if ( ! isset( $_POST['sg-user-id'] ) ) { // phpcs:ignore
+			return;
+		}
+
+		// Get the user 2fa login key.
+		$meta_2fa_login_key = get_user_meta( $_POST['sg-user-id'], 'sgs_2fa_login_key', true );
+
+		// Bail if the 2fa login key is invalid.
+		if (
+			Helper::sgs_decrypt( $meta_2fa_login_key, get_user_meta( $_POST['sg-user-id'], 'sgs_encryption_key', true ) ) !==
+			get_user_meta( $_POST['sg-user-id'], 'sg_security_2fa_secret', true )
+		) {
+			return;
+		}
+
 		$result = $this->validate_backup_login( wp_unslash( $_POST['sgc2fabackupcode'] ), wp_unslash( $_POST['sg-user-id'] ) ); // phpcs:ignore
 
 		// Check the result of the authtication.
@@ -643,6 +686,9 @@ class Sg_2fa {
 
 		// Set the auth cookie.
 		wp_set_auth_cookie( wp_unslash( $_POST['sg-user-id'] ), intval( wp_unslash( $_POST['rememberme'] ) ) ); // phpcs:ignore
+
+		delete_user_meta( $_POST['sg-user-id'], 'sgs_2fa_login_key' );
+		delete_user_meta( $_POST['sg-user-id'], 'sgs_encryption_key' );
 
 		// Update the user meta if this is the inital 2FA setup.
 		if ( isset( $_POST['sgs-2fa-setup'] ) ) { // phpcs:ignore
@@ -675,6 +721,17 @@ class Sg_2fa {
 			return;
 		}
 
+		// Get the user 2fa login key.
+		$meta_2fa_login_key = get_user_meta( $_POST['sg-user-id'], 'sgs_2fa_login_key', true );
+
+		// Bail if the 2fa login key is invalid.
+		if (
+			Helper::sgs_decrypt( $meta_2fa_login_key, get_user_meta( $_POST['sg-user-id'], 'sgs_encryption_key', true ) ) !==
+			get_user_meta( $_POST['sg-user-id'], 'sg_security_2fa_secret', true )
+		) {
+			return;
+		}
+
 		$result = $this->check_authentication_code( wp_unslash( $_POST['sgc2facode'] ), wp_unslash( $_POST['sg-user-id'] ) ); // phpcs:ignore
 
 		// Check the result of the authtication.
@@ -702,6 +759,9 @@ class Sg_2fa {
 
 		// Set the auth cookie.
 		wp_set_auth_cookie( wp_unslash( $_POST['sg-user-id'] ), intval( wp_unslash( $_POST['rememberme'] ) ) ); // phpcs:ignore
+
+		delete_user_meta( $_POST['sg-user-id'], 'sgs_2fa_login_key' );
+		delete_user_meta( $_POST['sg-user-id'], 'sgs_encryption_key' );
 
 		// Update the user meta if this is the inital 2FA setup.
 		if ( isset( $_POST['sgs-2fa-setup'] ) ) { // phpcs:ignore
@@ -741,7 +801,7 @@ class Sg_2fa {
 		// Get all users with 2FA configured.
 		$users = get_users(
 			array(
-				'role__in'   => $sg_2fa->roles,
+				'role__in'   => $this->get_2fa_user_roles(),
 				'orderby'    => 'user_login',
 				'order'      => 'ASC',
 				'fields'     => array(
