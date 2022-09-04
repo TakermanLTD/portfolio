@@ -59,6 +59,7 @@ jobs:
           registry: ${{ env.REGISTRY }}
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
+          repo-token: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           credentials: ${{ secrets.SECRET_PASSWORD }}
           SECRET_PASSWORD: ${{ secrets.SECRET_PASSWORD }}
