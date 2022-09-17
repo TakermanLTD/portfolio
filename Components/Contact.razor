@@ -1,0 +1,91 @@
+@inherits ComponentBase
+@namespace Takerman.Portfolio.Components
+
+    <!-- ======= Contact Section ======= -->
+    <section id="contact" class="contact">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>Contact</h2>
+          <p>If you want to contact us, drop us a message down bellow.</p>
+        </div>
+
+        <div class="row">
+
+          <div class="col-lg-5 d-flex align-items-stretch">
+            <div class="info">
+              <div class="address">
+                <i class="bi bi-geo-alt"></i>
+                <h4>Location:</h4>
+                <p>bul. Iztochen, Plovdiv, Bulgaria</p>
+              </div>
+
+              <div class="email">
+                <i class="bi bi-envelope"></i>
+                <h4>Email:</h4>
+                <p>contact@takerman.net</p>
+              </div>
+
+              <div class="phone">
+                <i class="bi bi-phone"></i>
+                <h4>Call:</h4>
+                <p>+447383721742</p>
+              </div>
+
+              <!-- Real address -->
+              <!-- <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6884.662924569007!2d24.759727993743134!3d42.149675231565844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14acd175bea2934d%3A0xcca02662c2364486!2sbul.%20%22Iztochen%22%2080%2C%204000%20Tsentar%2C%20Plovdiv!5e0!3m2!1sen!2sbg!4v1662306441708!5m2!1sen!2sbg"
+              frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"></iframe> -->
+
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2958.134073389703!2d24.760884815327426!3d42.14741767920169!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14acd10ab6558be7%3A0x8b8db75788fb7b4c!2s862%20101%2C%204000%20Tsentar%2C%20Plovdiv!5e0!3m2!1sen!2sbg!4v1662315803570!5m2!1sen!2sbg"
+                frameborder="0" style="border:0; width: 100%; height: 290px;" allowfullscreen loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+
+          </div>
+
+          <!-- <div class="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch"></div> -->
+          <div class="col-lg-7 mt-5 mt-lg-0 align-items-stretch">
+            <!-- <script charset="utf-8" type="text/javascript" src="//js-eu1.hsforms.net/forms/v2.js?pre=1"></script>
+            <script>
+              hbspt.forms.create({
+                region: "eu1",
+                portalId: "25912911",
+                formId: "15058842-453b-4294-9345-afaa17c16816"
+              });
+            </script> -->
+
+            <form action="forms/contact.php" method="post" role="form" class="php-email-form">
+              <div class="row">
+                <div class="form-group col-md-6">
+                  <label for="name">Your Name</label>
+                  <input type="text" name="name" class="form-control" id="name" required>
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="name">Your Email</label>
+                  <input type="email" class="form-control" name="email" id="email" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="name">Subject</label>
+                <input type="text" class="form-control" name="subject" id="subject" required>
+              </div>
+              <div class="form-group">
+                <label for="name">Message</label>
+                <textarea class="form-control" name="message" rows="10" required></textarea>
+              </div>
+              <div class="my-3">
+                <div class="loading">Loading</div>
+                <div class="error-message"></div>
+                <div class="sent-message">Your message has been sent. Thank you!</div>
+              </div>
+              <div class="text-center"><button type="submit">Send Message</button></div>
+            </form>
+          </div>
+
+        </div>
+
+      </div>
+    </section><!-- End Contact Section -->
