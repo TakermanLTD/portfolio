@@ -1,6 +1,31 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function Contact() {
+  const [fullName, setFullName] = useState('');
+  const [email, setEmail] = useState('');
+  const [subject, setSubject] = useState('');
+  const [message, setMessage] = useState('');
+  const [isSent, setIsSent] = useState(false);
+
+  async function sendMessageAsync() {
+    var data = {
+      fullName: fullName,
+      email: email,
+      subject: subject,
+      message: message
+    };
+
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(data)
+    };
+
+    const response = await fetch('home', requestOptions);
+    const result = await response.json();
+    setIsSent(result);
+  }
+
   return (
     <section id="contact" className="contact">
       <div className="container" data-aos="fade-up">
@@ -41,7 +66,7 @@ export default function Contact() {
           </div>
 
           <div className="col-lg-7 mt-5 mt-lg-0 align-items-stretch">
-            <form className="php-email-form">
+            <form action="#" className="php-email-form">
               <div className="row">
                 <div className="form-group col-md-6">
                   <label htmlFor="name">Your Name</label>
@@ -62,9 +87,9 @@ export default function Contact() {
                 <div className="my-3">
                   <div className="loading">Loading</div>
                   <div className="error-message"></div>
-                  <div className="sent-message">Your message has been sent. Thank you!</div>
+                  <div className="sent-message" style={{ display: isSent ? "block" : "none" }}>Your message has been sent. Thank you!</div>
                 </div>
-                <div className="text-center"><button type="submit">Send Message</button></div>
+                <div className="text-center"><button type="button" onClick={sendMessageAsync}>Send Message</button></div>
               </div>
             </form>
           </div>

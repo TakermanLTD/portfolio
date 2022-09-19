@@ -12,4 +12,10 @@ public class HomeController : ControllerBase
     {
         _logger = logger;
     }
+
+    [HttpPost]
+    public bool Get()
+    {
+        return true;
+    }
 }
