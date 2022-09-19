@@ -70,19 +70,19 @@ export default function Contact() {
               <div className="row">
                 <div className="form-group col-md-6">
                   <label htmlFor="name">Your Name</label>
-                  <input className="form-control" id="name" required />
+                  <input className="form-control" id="name" value={fullName} onChange={(e) => setFullName(e.target.value)} required />
                 </div>
                 <div className="form-group col-md-6">
                   <label htmlFor="name">Your Email</label>
-                  <input className="form-control" name="email" id="email" required />
+                  <input className="form-control" name="email" value={email} onChange={(e) => setEmail(e.target.value)} id="email" required />
                 </div>
                 <div className="form-group">
                   <label htmlFor="name">Subject</label>
-                  <input className="form-control" name="subject" id="subject" />
+                  <input className="form-control" name="subject" value={subject} onChange={(e) => setSubject(e.target.value)} id="subject" />
                 </div>
                 <div className="form-group">
                   <label htmlFor="name">Message</label>
-                  <textarea className="form-control" name="message" id="message" rows="10" />
+                  <textarea className="form-control" name="message" value={message} onChange={(e) => setMessage(e.target.value)} id="message" rows="10" />
                 </div>
                 <div className="my-3">
                   <div className="loading">Loading</div>
