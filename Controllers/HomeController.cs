@@ -19,10 +19,10 @@ public class HomeController : ControllerBase
     [HttpPost]
     public bool Post([FromBody] MessageDto request)
     {
-        var message = new MailMessage(request.Email, "contact@takerman.net")
+        var message = new MailMessage("tivanov@takerman.net", "contact@takerman.net")
         {
             Subject = request.Subject,
-            Body = request.Message
+            Body = request.Email + " " + request.Message
         };
 
         var client = new SmtpClient("smtp.gmail.com", 465)
