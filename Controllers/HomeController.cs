@@ -27,7 +27,7 @@ public class HomeController : ControllerBase
 
         var client = new SmtpClient("smtp.gmail.com", 465)
         {
-            Credentials = new NetworkCredential("tivanov@takerman.net", "Hakerman91!"), // iftdskryilizhvcb
+            Credentials = new NetworkCredential("tivanov@takerman.net", "iftdskryilizhvcb"), // iftdskryilizhvcb
             EnableSsl = true,
             UseDefaultCredentials = false
         };
