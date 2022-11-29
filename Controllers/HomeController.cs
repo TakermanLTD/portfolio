@@ -1,5 +1,6 @@
 ﻿using System.Net;
 using System.Net.Mail;
+using System.Reflection;
 using Microsoft.AspNetCore.Mvc;
 using Takerman.Portfolio.Models;
 
@@ -10,35 +11,44 @@ namespace Takerman.Portfolio.Controllers;
 public class HomeController : ControllerBase
 {
     private readonly ILogger<HomeController> _logger;
+    private readonly IConfiguration _configuration;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(ILogger<HomeController> logger, IConfiguration configuration)
     {
         _logger = logger;
+        _configuration = configuration;
     }
 
     [HttpPost]
     public bool Post([FromBody] MessageDto request)
     {
-        var message = new MailMessage("tivanov@takerman.net", "contact@takerman.net")
+        _logger.LogInformation(request.FullName);
+
+        var to = new MailAddress(_configuration["Smtp:UserName"]);
+        var from = new MailAddress(request.Email, request.FullName);
+
+        var email = new MailMessage(from, to)
         {
             Subject = request.Subject,
-            Body = request.Email + " " + request.Message
+            Body = "From: " + request.Email + ": " + Environment.NewLine + request.Message
         };
 
-        var client = new SmtpClient("smtp.gmail.com", 465)
+        var smtp = new SmtpClient
         {
-            Credentials = new NetworkCredential("tivanov@takerman.net", "iftdskryilizhvcb"), // iftdskryilizhvcb
-            EnableSsl = true,
-            UseDefaultCredentials = false
+            Host = _configuration["Smtp:Server"],
+            Port = int.TryParse(_configuration["Smtp:Port"], out int port) ? port : 587,
+            Credentials = new NetworkCredential(_configuration["Smtp:UserName"], _configuration["Smtp:Password"]),
+            DeliveryMethod = SmtpDeliveryMethod.Network,
+            EnableSsl = true
         };
-        
+
         try
         {
-            client.Send(message);
+            smtp.Send(email);
         }
-        catch (Exception ex)
+        catch (SmtpException ex)
         {
-            Console.WriteLine("Exception caught while Sending message: {0}", ex.ToString());
+            Console.WriteLine(ex.ToString());
         }
 
         return true;
