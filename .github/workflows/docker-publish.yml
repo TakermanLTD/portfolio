@@ -10,7 +10,7 @@ on:
     branches: [ "latest" ]
 
 env:
-  REGISTRY: takerman
+  REGISTRY: ghcr.io
   IMAGE_NAME: ${{ github.repository }}
   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -41,10 +41,10 @@ jobs:
         uses: docker/login-action@28218f9b04b4f3f62068d7b6ce6ca5b26e35336c
         with:
           registry: ${{ env.REGISTRY }}
-          username: ${{ secrets.REGISTRY_USERNAME }}
-          password: ${{ secrets.REGISTRY_PASSWORD }}
-          # username: ${{ github.actor }}
-          # password: ${{ secrets.GITHUB_TOKEN }}
+          # username: ${{ secrets.REGISTRY_USERNAME }}
+          # password: ${{ secrets.REGISTRY_PASSWORD }}
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Extract Docker metadata
         id: meta
