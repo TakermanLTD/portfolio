@@ -30,7 +30,7 @@
           data-aos-delay="200"
         >
           <img
-            src="assets/img/hero-img.png"
+            src="@/assets/img/hero-img.png"
             className="img-fluid animated"
             alt=""
           />
