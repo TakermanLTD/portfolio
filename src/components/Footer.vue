@@ -1,3 +1,24 @@
+<script>
+export default {
+  mounted() {
+    const script = document.createElement("script");
+    script.src = "https://js-eu1.hsforms.net/forms/embed/v2.js";
+    document.body.appendChild(script);
+    script.addEventListener("load", () => {
+      if (window.hbspt) {
+        window.hbspt.forms.create({
+          region: "eu1",
+          portalId: "25912911",
+          formId: "030e6043-546d-4c13-bf36-6fd2d9a03745",
+          target: "#newsletterForm"
+        })
+      }
+    })
+  }
+}
+</script>
+
+
 <template>
   <footer id="footer">
     <div className="footer-newsletter">
@@ -6,24 +27,10 @@
           <div className="col-lg-6">
             <h4>Join Our Newsletter</h4>
             <p>Enter your email</p>
-            <!-- <script
-                charset="utf-8"
-                type="text/javascript"
-                src="//js-eu1.hsforms.net/forms/v2.js?pre=1"
-              ></script>
-              <script>
-                hbspt.forms.create({
-                  region: "eu1",
-                  portalId: "25912911",
-                  formId: "030e6043-546d-4c13-bf36-6fd2d9a03745",
-                });
-              </script> -->
-            <form action="" method="post">
-              <input type="email" name="email" /><input
-                type="submit"
-                value="Subscribe"
-              />
-            </form>
+            <div id="newsletterForm" v-once></div>
+            <!-- <form action="" method="post">
+              <input type="email" name="email" /><input type="submit" value="Subscribe" />
+            </form> -->
           </div>
         </div>
       </div>
@@ -83,8 +90,7 @@
 
     <div className="container footer-bottom clearfix">
       <div className="copyright">
-        &copy; Copyright <strong><span>Takerman</span></strong
-        >. All Rights Reserved
+        &copy; Copyright <strong><span>Takerman</span></strong>. All Rights Reserved
       </div>
       <div className="credits"></div>
     </div>
