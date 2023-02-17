@@ -3,6 +3,8 @@
   "include": ["./**/*", "../support/**/*"],
   "compilerOptions": {
     "isolatedModules": false,
+    "allowJs": true,
+    "checkJs": false,
     "target": "es5",
     "lib": ["es5", "dom"],
     "types": ["cypress"]
