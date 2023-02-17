@@ -5,9 +5,14 @@
     "src/**/*",
     "src/**/*.vue",
     "public/assets/js",
+    "public/assets/vendor/aos",
+    "public/assets/vendor/bootstrap/js",
+    "public/assets/vendor/glightbox/js",
     "public/assets/vendor/isotope-layout",
-    "public/assets/vendor/glightbox/js"
-, "public/assets/vendor/bootstrap/js"  ],
+    "public/assets/vendor/php-email-form",
+    "public/assets/vendor/swiper",
+    "public/assets/vendor/waypoints"
+  ],
   "exclude": [
     "src/**/__tests__/*"
   ],
