@@ -1,10 +1,10 @@
 <template>
   <header id="header" className="fixed-top ">
     <div className="container d-flex align-items-center">
-      <h1 className="logo me-auto"><a href="index.html">Takerman</a></h1>
+      <h1 className="logo me-auto"><a href="/">Takerman</a></h1>
       <!-- {
       <a href="index.html" className="logo me-auto"
-        ><img src="@/assets/img/logo.png" alt="" className="img-fluid"
+        ><img src="/assets/img/logo.png" alt="" className="img-fluid"
       /></a>
       } -->
       <nav id="navbar" className="navbar">

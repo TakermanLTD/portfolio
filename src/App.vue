@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import AppHeader from "./components/AppHeader.vue";
 import Footer from "./components/Footer.vue";
+import Preloader from "./components/Preloader.vue";
 </script>
 
 <template>
@@ -9,4 +10,5 @@ import Footer from "./components/Footer.vue";
     <RouterView />
   </main>
   <Footer></Footer>
+  <Preloader></Preloader>
 </template>

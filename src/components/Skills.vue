@@ -7,7 +7,7 @@
           data-aos="fade-right"
           data-aos-delay="100"
         >
-          <img src="@/assets/img/skills.png" className="img-fluid" alt="" />
+          <img src="/assets/img/skills.png" className="img-fluid" alt="" />
         </div>
         <div
           className="col-lg-6 pt-4 pt-lg-0 content"

@@ -4,8 +4,6 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
-import AOS from "aos";
-
 (function() {
   "use strict";
 
