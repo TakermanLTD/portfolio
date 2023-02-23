@@ -12,7 +12,6 @@
       </div>
 
       <div className="row">
-        {/*
         <!-- <div className="col-xl-3 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
             <div className="icon-box">
               <div className="icon"><i className="bx bxl-dribbble"></i></div>
@@ -20,8 +19,6 @@
               <p>Voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi</p>
             </div>
           </div> -->
-        */}
-
         <div
           id="development"
           className="col-xl-3 col-md-6 d-flex align-items-stretch mt-4 mt-md-0"
