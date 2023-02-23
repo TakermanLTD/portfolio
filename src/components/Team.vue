@@ -20,7 +20,7 @@
           >
             <div className="pic">
               <img
-                src="@/assets/img/team/team-1.jpg"
+                src="/assets/img/team/team-1.jpg"
                 className="img-fluid"
                 alt=""
               />
@@ -47,7 +47,7 @@
           >
             <div className="pic">
               <img
-                src="@/assets/img/team/team-2.jpg"
+                src="/assets/img/team/team-2.jpg"
                 className="img-fluid"
                 alt=""
               />
@@ -76,7 +76,7 @@
           >
             <div className="pic">
               <img
-                src="@/assets/img/team/team-3.jpg"
+                src="/assets/img/team/team-3.jpg"
                 className="img-fluid"
                 alt=""
               />
@@ -103,7 +103,7 @@
           >
             <div className="pic">
               <img
-                src="@/assets/img/team/team-4.jpg"
+                src="/assets/img/team/team-4.jpg"
                 className="img-fluid"
                 alt=""
               />
