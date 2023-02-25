@@ -21,6 +21,9 @@
     "checkJs": false,
     "composite": true,
     "baseUrl": ".",
+    "types": [
+      "node"
+    ],
     "paths": {
       "@/*": [
         "./src/*"
