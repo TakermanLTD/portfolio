@@ -3,7 +3,7 @@
 "ServerUrl": "https://localhost:5173",
 "RedirectUrl": "",
 "LaunchCommand": "npm run dev",
-"WorkingDirectory": "C:\\dev\\websites\\Takerman.Portfolio\\Takerman.Portfolio.Server\\..\\takerman.portfolio.client",
+"WorkingDirectory": "C:\\dev\\websites\\app-takerman\\Takerman.Portfolio.Server\\..\\takerman.portfolio.client",
 "MaxTimeoutInSeconds": "120",
 "KeepRunning": "false"
 }

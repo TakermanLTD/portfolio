@@ -1,24 +1,7 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\dev\\websites\\Takerman.Portfolio\\",
-  "Documents": [
-    {
-      "AbsoluteMoniker": "D:0:0:{17DBBD91-5809-4FD4-BC79-CD20AD08650E}|Takerman.Portfolio.Server\\Takerman.Portfolio.Server.csproj|c:\\dev\\websites\\takerman.portfolio\\takerman.portfolio.server\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{17DBBD91-5809-4FD4-BC79-CD20AD08650E}|Takerman.Portfolio.Server\\Takerman.Portfolio.Server.csproj|solutionrelative:takerman.portfolio.server\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\dev\\websites\\Takerman.Portfolio\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{17DBBD91-5809-4FD4-BC79-CD20AD08650E}|Takerman.Portfolio.Server\\Takerman.Portfolio.Server.csproj|c:\\dev\\websites\\takerman.portfolio\\takerman.portfolio.server\\takerman.portfolio.server.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{17DBBD91-5809-4FD4-BC79-CD20AD08650E}|Takerman.Portfolio.Server\\Takerman.Portfolio.Server.csproj|solutionrelative:takerman.portfolio.server\\takerman.portfolio.server.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{9EC70936-47B2-4ED5-AFCA-7332116D0D47}|takerman.portfolio.client\\takerman.portfolio.client.esproj|c:\\dev\\websites\\takerman.portfolio\\takerman.portfolio.client\\src\\components\\helloworld.vue||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{9EC70936-47B2-4ED5-AFCA-7332116D0D47}|takerman.portfolio.client\\takerman.portfolio.client.esproj|solutionrelative:takerman.portfolio.client\\src\\components\\helloworld.vue||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    }
-  ],
+  "WorkspaceRootPath": "C:\\dev\\websites\\app-takerman\\",
+  "Documents": [],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -26,61 +9,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": -1,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": ".gitignore",
-              "DocumentMoniker": "C:\\dev\\websites\\Takerman.Portfolio\\.gitignore",
-              "RelativeDocumentMoniker": ".gitignore",
-              "ToolTip": "C:\\dev\\websites\\Takerman.Portfolio\\.gitignore",
-              "RelativeToolTip": ".gitignore",
-              "ViewState": "AQIAAIQAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "00000000-0000-0000-0000-000000000000.000000|iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAF8SURBVDhPjVNLTgJBEG1lwpoFB3GNK9fieA48hD8iwT/ihwgSDAIHgAGXXsEV18CNzL/LquqZdsYM6kteXqcy3fWqpmpNRBgOhyABBEgpAFVKPIMUcYzUyOU\u002BXM/b2qtU3vkSfRjjZTCAMAw1A2LwzdFoBPP5HNqdzuL27n4juibWI\u002BUshBA1DIkhEx9iEorFotgslQqGYbxxAGFEqt1MxmPWJLbLZdZ\u002Bv89q5PMFPiTR6z2zdaxR0fXA0XTBcVywkb4fwHXjRteecIDNQ7UmExVYAdPcxYaqclN46na5WenMKjtlVnTYwcXlVYaDqImW9beD5N/TeGy32QHXm6hZ03ZgiSQHp2fnWQ4oBmJqWSqwAqZpZjt4aLXAD4J0VqyZsmoubfB8H2r1eoaD6NXZ9HcHO\u002BSA3f4AjifXl8rItOETM8ckB9WTWpYD9RdeZ1PWVWAHWXPQaDb59f/w8LiqHeh1pvGkCaP6qB8yXusoxmuNZ7XmII4O9vGuEF86osuDYRkpYQAAAABJRU5ErkJggg==",
-              "WhenOpened": "2024-02-18T14:28:21.91Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Takerman.Portfolio.Server",
-              "DocumentMoniker": "C:\\dev\\websites\\Takerman.Portfolio\\Takerman.Portfolio.Server\\Takerman.Portfolio.Server.csproj",
-              "RelativeDocumentMoniker": "Takerman.Portfolio.Server\\Takerman.Portfolio.Server.csproj",
-              "ToolTip": "C:\\dev\\websites\\Takerman.Portfolio\\Takerman.Portfolio.Server\\Takerman.Portfolio.Server.csproj",
-              "RelativeToolTip": "Takerman.Portfolio.Server\\Takerman.Portfolio.Server.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2024-02-18T14:27:50.987Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\dev\\websites\\Takerman.Portfolio\\Takerman.Portfolio.Server\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "Takerman.Portfolio.Server\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\dev\\websites\\Takerman.Portfolio\\Takerman.Portfolio.Server\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "Takerman.Portfolio.Server\\Controllers\\HomeController.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAIAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-02-18T13:44:21.837Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "HelloWorld.vue",
-              "DocumentMoniker": "C:\\dev\\websites\\Takerman.Portfolio\\takerman.portfolio.client\\src\\components\\HelloWorld.vue",
-              "RelativeDocumentMoniker": "takerman.portfolio.client\\src\\components\\HelloWorld.vue",
-              "ToolTip": "C:\\dev\\websites\\Takerman.Portfolio\\takerman.portfolio.client\\src\\components\\HelloWorld.vue",
-              "RelativeToolTip": "takerman.portfolio.client\\src\\components\\HelloWorld.vue",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAcAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003491|",
-              "WhenOpened": "2024-02-18T13:26:02.099Z"
             }
           ]
         }

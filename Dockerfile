@@ -26,7 +26,7 @@ COPY takerman.portfolio.client/nuget.config ./
 RUN sed -i "s|</configuration>|<packageSourceCredentials><github><add key=\"Username\" value=\"takerman\"/><add key=\"ClearTextPassword\" value=\"${NUGET_PASSWORD}\"/></github></packageSourceCredentials></configuration>|" nuget.config
 RUN dotnet nuget add source https://nuget.pkg.github.com/takermanltd/index.json --name github
 RUN dotnet nuget list source
-RUN dotnet restore "./Takerman.Portfolio.Server/./Takerman.Portfolio.Server.csproj" --ignore-failed-sources
+RUN dotnet restore "./Takerman.Portfolio.Server/./Takerman.Portfolio.Server.csproj"
 COPY . .
 WORKDIR "/src/Takerman.Portfolio.Server"
 RUN dotnet build "./Takerman.Portfolio.Server.csproj" -c $BUILD_CONFIGURATION -o /app/build

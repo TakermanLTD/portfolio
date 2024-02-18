@@ -403,6 +403,7 @@
   "projectFileDependencyGroups": {
     "net8.0": [
       "Microsoft.AspNetCore.SpaProxy >= 8.*-*",
+      "Microsoft.Extensions.Options >= 8.0.2",
       "Takerman.Blogging >= 1.0.0",
       "Takerman.Notifications >= 1.0.0"
     ]
@@ -455,6 +456,10 @@
           "Microsoft.AspNetCore.SpaProxy": {
             "target": "Package",
             "version": "[8.*-*, )"
+          },
+          "Microsoft.Extensions.Options": {
+            "target": "Package",
+            "version": "[8.0.2, )"
           },
           "Takerman.Blogging": {
             "target": "Package",
