@@ -21,16 +21,18 @@ ARG BUILD_CONFIGURATION=Release
 WORKDIR /src
 COPY ["Takerman.Portfolio.Server/Takerman.Portfolio.Server.csproj", "Takerman.Portfolio.Server/"]
 COPY ["takerman.portfolio.client/takerman.portfolio.client.esproj", "takerman.portfolio.client/"]
+
 COPY takerman.portfolio.client/nuget.config ./
 RUN sed -i "s|</configuration>|<packageSourceCredentials><github><add key=\"Username\" value=\"takerman\"/><add key=\"ClearTextPassword\" value=\"${github_token}\"/></github></packageSourceCredentials></configuration>|" nuget.config
-RUN dotnet clean "./Takerman.Portfolio.Server/./Takerman.Portfolio.Server.csproj"
 RUN dotnet nuget add source https://nuget.pkg.github.com/takermanltd/index.json --name github
 RUN dotnet nuget list source
-RUN dotnet restore "./Takerman.Portfolio.Server/./Takerman.Portfolio.Server.csproj"
+
 COPY . .
 WORKDIR "/src/Takerman.Portfolio.Server"
+RUN dotnet clean "./Takerman.Portfolio.Server.csproj"
+RUN dotnet restore "./Takerman.Portfolio.Server.csproj"
 RUN dotnet build "./Takerman.Portfolio.Server.csproj" -c $BUILD_CONFIGURATION -o /app/build
-RUN dotnet test "./Takerman.Portfolio.Server/./Takerman.Portfolio.Server.csproj"
+RUN dotnet test "./Takerman.Portfolio.Server.csproj"
 
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
