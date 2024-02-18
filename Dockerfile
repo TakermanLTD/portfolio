@@ -27,10 +27,10 @@ RUN dotnet clean "./Takerman.Portfolio.Server/./Takerman.Portfolio.Server.csproj
 RUN dotnet nuget add source https://nuget.pkg.github.com/takermanltd/index.json --name github
 RUN dotnet nuget list source
 RUN dotnet restore "./Takerman.Portfolio.Server/./Takerman.Portfolio.Server.csproj"
-RUN dotnet test "./Takerman.Portfolio.Server/./Takerman.Portfolio.Server.csproj"
 COPY . .
 WORKDIR "/src/Takerman.Portfolio.Server"
 RUN dotnet build "./Takerman.Portfolio.Server.csproj" -c $BUILD_CONFIGURATION -o /app/build
+RUN dotnet test "./Takerman.Portfolio.Server/./Takerman.Portfolio.Server.csproj"
 
 FROM build AS publish
 ARG BUILD_CONFIGURATION=Release
