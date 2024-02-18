@@ -50,6 +50,14 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
 
+      - name: Add Github Packages Registry
+        run: |
+          dotnet nuget add source https://nuget.pkg.github.com/takermanltd/index.json \
+            -n github \
+            -u takerman \
+            -p ${{secrets.GITHUB_TOKEN}} \
+            --store-password-in-clear-text
+
       - name: Build and push Docker image
         id: build-and-push
         uses: docker/build-push-action@ac9327eae2b366085ac7f6a2d02df8aa8ead720a
