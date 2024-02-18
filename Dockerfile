@@ -18,12 +18,11 @@ RUN curl -fsSL https://deb.nodesource.com/nsolid_setup_deb.sh | sh -s 20
 RUN apt-get install -y nodejs
 ARG BUILD_CONFIGURATION=Release
 
-RUN dotnet nuget add source https://nuget.pkg.github.com/takermanltd/index.json --store-password-in-clear-text --name github --username takerman --password $github_token
-RUN dotnet nuget list source
-
 WORKDIR /src
 COPY ["Takerman.Portfolio.Server/Takerman.Portfolio.Server.csproj", "Takerman.Portfolio.Server/"]
 COPY ["takerman.portfolio.client/takerman.portfolio.client.esproj", "takerman.portfolio.client/"]
+RUN dotnet nuget add source https://nuget.pkg.github.com/takermanltd/index.json --password $github_token --store-password-in-clear-text --name github --username takerman
+RUN dotnet nuget list source
 RUN dotnet restore "./Takerman.Portfolio.Server/./Takerman.Portfolio.Server.csproj"
 COPY . .
 WORKDIR "/src/Takerman.Portfolio.Server"
