@@ -56,7 +56,7 @@ jobs:
             --name github \
             --username takerman \
             --password ${{secrets.REGISTRY_TOKEN}} \
-            --configfile takerman.portfolio.client/nuget.config
+            --configfile .nuget/NuGet.Config
         
       - name: Restore NuGet Packages
         run: dotnet restore Takerman.Portfolio.sln
