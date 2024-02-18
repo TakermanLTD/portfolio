@@ -1,0 +1,1 @@
+C:\dev\websites\Takerman.Portfolio\takerman.portfolio.client\obj\Debug\takerman.portfolio.client.esproj.CoreCompileInputs.cache

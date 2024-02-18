@@ -1,0 +1,23 @@
+{
+  "Version": 1,
+  "Hash": "wtW12Jnqq5DZ5zBT2/5RiHm/gLZyBBCE/4upxmSz3tg=",
+  "Source": "Takerman.Portfolio.Server",
+  "BasePath": "_content/Takerman.Portfolio.Server",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [
+    {
+      "Identity": "C:\\dev\\websites\\Takerman.Portfolio\\takerman.portfolio.client\\takerman.portfolio.client.esproj",
+      "Version": 2,
+      "Source": "takerman.portfolio.client",
+      "GetPublishAssetsTargets": "GetCurrentProjectPublishStaticWebAssetItems",
+      "AdditionalPublishProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalPublishPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained",
+      "GetBuildAssetsTargets": "GetCurrentProjectBuildStaticWebAssetItems",
+      "AdditionalBuildProperties": "Configuration=Debug;Platform=AnyCPU",
+      "AdditionalBuildPropertiesToRemove": "WebPublishProfileFile;TargetFramework;RuntimeIdentifier;SelfContained"
+    }
+  ],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
