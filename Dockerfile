@@ -1,6 +1,6 @@
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 ENV ASPNETCORE_ENVIRONMENT Production
-RUN --mount=type=secret,id=github_token cat /run/secrets/github_token
+# RUN --mount=type=secret,id=github_token cat /run/secrets/github_token
 WORKDIR /app
 EXPOSE 80
 EXPOSE 443
