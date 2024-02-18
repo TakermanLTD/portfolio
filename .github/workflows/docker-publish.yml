@@ -52,11 +52,7 @@ jobs:
 
       - name: Auth NuGet
         run: | 
-          dotnet nuget add source https://nuget.pkg.github.com/takermanltd/index.json \
-            --name github \
-            --username takerman \
-            --password ${{secrets.REGISTRY_TOKEN}} \
-            --configfile takerman.portfolio.client/nuget.config
+          dotnet nuget add source https://nuget.pkg.github.com/takermanltd/index.json --name github --username takerman --password ${{secrets.REGISTRY_TOKEN}} --configfile takerman.portfolio.client/nuget.config --store-password-in-clear-text
         
       - name: Restore NuGet Packages
         run: dotnet restore Takerman.Portfolio.sln
