@@ -19,7 +19,7 @@ ARG BUILD_CONFIGURATION=Release
 
 WORKDIR /src
 COPY ["Takerman.Portfolio.Server/Takerman.Portfolio.Server.csproj", "Takerman.Portfolio.Server/"]
-COPY ["takerman.Portfolio.client/takerman.Portfolio.client.esproj", "takerman.Portfolio.client/"]
+COPY ["takerman.portfolio.client/takerman.portfolio.client.esproj", "takerman.portfolio.client/"]
 RUN dotnet restore "./Takerman.Portfolio.Server/./Takerman.Portfolio.Server.csproj"
 COPY . .
 WORKDIR "/src/Takerman.Portfolio.Server"
