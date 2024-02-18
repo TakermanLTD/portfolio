@@ -1,7 +1,7 @@
 {
   "include": ["vite.config.*", "vitest.config.*", "cypress.config.*", "playwright.config.*"],
   "compilerOptions": {
-    "composite": true,
+    "composite": false,
     "allowJs": true,
     "checkJs": false,
     "types": ["node"]

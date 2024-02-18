@@ -2,7 +2,7 @@
   "extends": "./tsconfig.app.json",
   "exclude": [],
   "compilerOptions": {
-    "composite": true,
+    "composite": false,
     "allowJs": true,
     "checkJs": false,
     "lib": [],
