@@ -413,11 +413,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\dev\\websites\\Takerman.Portfolio\\Takerman.Portfolio.Server\\Takerman.Portfolio.Server.csproj",
+      "projectUniqueName": "C:\\dev\\websites\\app-takerman\\Takerman.Portfolio.Server\\Takerman.Portfolio.Server.csproj",
       "projectName": "Takerman.Portfolio.Server",
-      "projectPath": "C:\\dev\\websites\\Takerman.Portfolio\\Takerman.Portfolio.Server\\Takerman.Portfolio.Server.csproj",
+      "projectPath": "C:\\dev\\websites\\app-takerman\\Takerman.Portfolio.Server\\Takerman.Portfolio.Server.csproj",
       "packagesPath": "C:\\Users\\conta\\.nuget\\packages\\",
-      "outputPath": "C:\\dev\\websites\\Takerman.Portfolio\\Takerman.Portfolio.Server\\obj\\",
+      "outputPath": "C:\\dev\\websites\\app-takerman\\Takerman.Portfolio.Server\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\conta\\AppData\\Roaming\\NuGet\\NuGet.Config",
