@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Takerman.Portfolio.Server")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c0394675e86bf0632e09ec9ad9f84de4dabdb7d7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+23c46c5be76272e141d40c485b7a93b11f3a221c")]
 [assembly: System.Reflection.AssemblyProductAttribute("Takerman.Portfolio.Server")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Takerman.Portfolio.Server")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

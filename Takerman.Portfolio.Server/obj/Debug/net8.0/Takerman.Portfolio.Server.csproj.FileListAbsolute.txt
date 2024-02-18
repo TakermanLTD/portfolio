@@ -33,3 +33,4 @@ C:\dev\websites\Takerman.Portfolio\Takerman.Portfolio.Server\obj\Debug\net8.0\re
 C:\dev\websites\Takerman.Portfolio\Takerman.Portfolio.Server\obj\Debug\net8.0\Takerman.Portfolio.Server.pdb
 C:\dev\websites\Takerman.Portfolio\Takerman.Portfolio.Server\obj\Debug\net8.0\Takerman.Portfolio.Server.genruntimeconfig.cache
 C:\dev\websites\Takerman.Portfolio\Takerman.Portfolio.Server\obj\Debug\net8.0\ref\Takerman.Portfolio.Server.dll
+C:\dev\websites\Takerman.Portfolio\Takerman.Portfolio.Server\obj\Debug\net8.0\Takerman.Portfolio.Server.sourcelink.json
