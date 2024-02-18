@@ -18,7 +18,7 @@ RUN curl -fsSL https://deb.nodesource.com/nsolid_setup_deb.sh | sh -s 20
 RUN apt-get install -y nodejs
 ARG BUILD_CONFIGURATION=Release
 
-RUN dotnet nuget add source https://nuget.pkg.github.com/takermanltd/index.json --name github --username takerman --password ${github_token} --store-password-in-clear-text
+RUN dotnet nuget add source https://nuget.pkg.github.com/takermanltd/index.json --name github --username takerman --password $github_token --store-password-in-clear-text
 RUN dotnet nuget list source
 
 WORKDIR /src
