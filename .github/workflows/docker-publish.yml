@@ -50,6 +50,17 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
 
+      - name: Auth NuGet
+        run: | 
+          dotnet nuget add source https://nuget.pkg.github.com/takermanltd/index.json \
+            --name github \
+            --username takerman \
+            --password ${{secrets.REGISTRY_TOKEN}} \
+            --configfile takerman.portfolio.client\nuget.config
+        
+      - name: Restore NuGet Packages
+        run: dotnet restore Takerman.Portfolio.sln
+        
       - name: Build and push Docker image
         id: build-and-push
         uses: docker/build-push-action@ac9327eae2b366085ac7f6a2d02df8aa8ead720a
@@ -58,9 +69,3 @@ jobs:
           push: ${{ github.event_name != 'pull_request' }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
-      - uses: actions/setup-dotnet@v4
-        with:
-          dotnet-version: '8.0.x'
-          source-url: https://nuget.pkg.github.com/takermanltd/index.json
-        env:
-          NUGET_AUTH_TOKEN: ${{secrets.REGISTRY_TOKEN}}
