@@ -23,7 +23,7 @@ COPY ["Takerman.Portfolio.Server/Takerman.Portfolio.Server.csproj", "Takerman.Po
 COPY ["takerman.portfolio.client/takerman.portfolio.client.esproj", "takerman.portfolio.client/"]
 COPY takerman.portfolio.client/nuget.config ./
 RUN sed -i "s|</configuration>|<packageSourceCredentials><github><add key=\"Username\" value=\"takerman\"/><add key=\"ClearTextPassword\" value=\"${github_token}\"/></github></packageSourceCredentials></configuration>|" nuget.config
-RUN dotnet clean
+RUN dotnet clean ./Takerman.Portfolio.sln
 RUN dotnet nuget add source https://nuget.pkg.github.com/takermanltd/index.json --name github
 RUN dotnet nuget list source
 RUN dotnet restore "./Takerman.Portfolio.Server/./Takerman.Portfolio.Server.csproj"
