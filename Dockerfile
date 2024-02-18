@@ -1,6 +1,5 @@
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS base
 ENV ASPNETCORE_ENVIRONMENT Production
-RUN --mount=type=secret,id=github_token cat /run/secrets/github_token
 WORKDIR /app
 EXPOSE 80
 EXPOSE 443
@@ -17,6 +16,7 @@ RUN apt-get install -y libpng-dev libjpeg-dev curl libxi6 build-essential libgl1
 RUN curl -fsSL https://deb.nodesource.com/nsolid_setup_deb.sh | sh -s 20
 RUN apt-get install -y nodejs
 ARG BUILD_CONFIGURATION=Release
+ARG NUGET_PASSWORD
 
 WORKDIR /src
 COPY ["Takerman.Portfolio.Server/Takerman.Portfolio.Server.csproj", "Takerman.Portfolio.Server/"]
