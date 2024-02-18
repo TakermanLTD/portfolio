@@ -3,6 +3,7 @@
   "exclude": [],
   "compilerOptions": {
     "composite": false,
+    "incremental": true,
     "allowJs": true,
     "checkJs": false,
     "lib": [],
