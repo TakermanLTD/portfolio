@@ -1,35 +1,27 @@
 <script>
-import { Connection } from 'rabbitmq-client'
-
 export default {
-  data: {
-    rabbit: null,
-    isSent: false
-  },
-  mounted() {
-    this.rabbit = new Connection('amqp://takerman:Hakerman91!@192.168.1.3.net:5672')
-    this.rabbit.on('error', (err) => {
-      console.log('RabbitMQ connection error', err)
-    })
-    this.rabbit.on('connection', () => {
-      console.log('Connection successfully (re)established')
-    });
+  data() {
+    return {
+      isSent: false
+    }
   },
   methods: {
-    sendMessage() {
-      const pub = rabbit.createPublisher({
-        confirm: true,
-        maxAttempts: 2
-      });
-
+    async sendMessage() {
       const message = {
-        subject: document.getElementById('subject'),
-        name: document.getElementById('name'),
-        email: document.getElementById('email'),
-        message: document.getElementById('message')
+        Subject: document.getElementById('subject').value,
+        From: document.getElementById('email').value,
+        Body: document.getElementById('name').value + ' sent you a message: ' + document.getElementById('message').value,
+        To: 'tivanov@takerman.net'
       }
-
-      await pub.send('mail', message)
+      await fetch('home/sendMessage', {
+        method: 'POST',
+        headers: {
+          Accept: 'application.json',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(message),
+        cache: 'default'
+      }).then(() => { this.isSent = true; });
     }
   },
 }
@@ -89,7 +81,7 @@ export default {
                 <div className="loading">Loading</div>
                 <div className="error-message"></div>
                 <div className="sent-message">
-                  <div className="sent-message" style="display: isSent ? 'block' : 'none'">
+                  <div className="sent-message" :style="'display: ' + (this.isSent ? 'block' : 'none')">
                     Your message has been sent. Thank you!
                   </div>
                 </div>

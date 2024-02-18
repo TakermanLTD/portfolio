@@ -1,3 +1,10 @@
+<script>
+export default {
+  mounted() {
+  }
+}
+</script>
+
 <template>
   <header id="header" className="fixed-top ">
     <div className="container d-flex align-items-center">

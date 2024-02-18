@@ -1,3 +1,10 @@
+<script>
+export default {
+  mounted() {
+  }
+}
+</script>
+
 <template>
   <section id="cta" className="cta">
     <div className="container" data-aos="zoom-in">

@@ -1,3 +1,10 @@
+<script>
+export default {
+  mounted() {
+  }
+}
+</script>
+
 <template>
   <section id="hero" className="d-flex align-items-center">
     <div className="container">

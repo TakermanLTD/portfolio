@@ -5,7 +5,6 @@ export default {
 }
 </script>
 
-
 <template>
   <footer id="footer">
     <!-- <div className="footer-newsletter">

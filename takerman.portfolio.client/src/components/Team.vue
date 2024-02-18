@@ -1,3 +1,10 @@
+<script>
+export default {
+  mounted() {
+  }
+}
+</script>
+
 <template>
   <section id="team" className="team section-bg">
     <div className="container" data-aos="fade-up">

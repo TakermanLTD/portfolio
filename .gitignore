@@ -358,3 +358,4 @@ MigrationBackup/
 FodyWeavers.xsd
 Takerman.Portfolio.Server/bin/
 Takerman.Portfolio.Server/obj/
+.vs/
