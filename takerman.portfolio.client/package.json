@@ -16,6 +16,7 @@
   },
   "dependencies": {
     "rabbitmq-client": "^4.6.0",
+    "rollup": "^4.21.1",
     "vue": "^3.4.38",
     "vue-router": "^4.4.3"
   },
