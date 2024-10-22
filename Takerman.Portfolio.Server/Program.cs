@@ -2,7 +2,6 @@ using Takerman.Mail;
 using Takerman.Logging;
 
 var builder = WebApplication.CreateBuilder(args);
-builder.Host.AddTakermanLogging();
 builder.Logging.AddTakermanLogging();
 builder.Services.AddControllers();
 builder.Services.Configure<RabbitMqConfig>(builder.Configuration.GetSection(nameof(RabbitMqConfig)));
