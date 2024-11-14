@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Takerman.Extensions;
 using Takerman.Mail;
 
 namespace Takerman.Portfolio.Server.Controllers
@@ -16,7 +17,7 @@ namespace Takerman.Portfolio.Server.Controllers
             }
             catch (Exception ex)
             {
-                _logger.LogError(ex, "An error occured when sending an email.");
+                _logger.LogError(ex, "*Takerman*: An error occured when sending an email. {Exception}", ex.GetMessage());
             }
         }
     }
