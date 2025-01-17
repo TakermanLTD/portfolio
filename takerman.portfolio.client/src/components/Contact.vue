@@ -25,6 +25,7 @@
                             <i className="bi bi-phone"></i>
                             <h4>Call:</h4>
                             <p><a href="tel:+447383721742">+447383721742</a></p>
+                            <p><a href="tel:+359894834513">+359894834513</a></p>
                         </div>
                     </div>
                 </div>
